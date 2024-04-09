@@ -19,15 +19,21 @@ const App = () => {
     <View>
       <Text style={{fontSize: 30}}>Platform:{Platform.OS}</Text>
       {
-      Platform.OS ? 
+      Platform.OS=="android" ? 
         <View style={{backgroundColor:'pink', height:100, width:100}}/>
        : 
         <View style={{backgroundColor:'blue', height:100, width:100}}/>
       }
+      <Text style={styles.text}>HEY</Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  text:{
+    color:Platform.OS=="android"?'green':'yellow',
+    fontSize:50
+  }
+});
 
 export default App;
